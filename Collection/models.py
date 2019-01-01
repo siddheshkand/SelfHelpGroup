@@ -46,4 +46,12 @@ class UserPaymentDetails(models.Model):
 
 class BankTransaction(models.Model):
     bank = models.ForeignKey(Bank, on_delete=models.CASCADE)
-    # credit =
+    payment_type = models.CharField(max_length=50)  # Credit or Debit
+    amount = models.PositiveIntegerField()
+    transaction_type = models.CharField(max_length=100)
+
+
+class Balance(models.Model):
+    bank = models.ForeignKey(Bank, on_delete=models.CASCADE)
+    current = models.PositiveIntegerField()
+    is_active = models.BooleanField(default=True)

@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # User Define
-    'Collection',
+    'Collection.apps.AppConfig',
+    'Loan.apps.LoanConfig',
 ]
 
 MIDDLEWARE = [
