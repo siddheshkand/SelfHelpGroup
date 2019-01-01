@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
+from . import forms
 
 
 def login_user(request):
@@ -24,7 +25,8 @@ def login_user(request):
 
 
 def register(request):
-    return render(request,'Home/register.html')
+    form = forms.RegistrationForm()
+    return render(request, 'Home/register.html', {'form': form})
 
 
 def show_dashboard(request):
