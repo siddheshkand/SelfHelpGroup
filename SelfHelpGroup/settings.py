@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     # User Define
     'Collection.apps.CollectionConfig',
     'Loan.apps.LoanConfig',
+    'Home',
 ]
 
 MIDDLEWARE = [
