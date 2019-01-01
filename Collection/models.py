@@ -45,4 +45,4 @@ class UserPaymentDetails(models.Model):
 
 class BankTransaction(models.Model):
     bank = models.ForeignKey(Bank,on_delete=models.CASCADE)
-    credit =
+    # credit =
