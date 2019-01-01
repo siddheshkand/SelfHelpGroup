@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -23,7 +24,8 @@ class Role(models.Model):
     is_active = models.BooleanField(default=True)
 
 
-class User(models.Model):
+class Member(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     mobile = models.CharField(max_length=10)
     email = models.EmailField(blank=True, null=True)
