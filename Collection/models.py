@@ -29,6 +29,7 @@ class Member(models.Model):
     name = models.CharField(max_length=200)
     mobile = models.CharField(max_length=10)
     email = models.EmailField(blank=True, null=True)
+    address = models.CharField(max_length=300)
     is_active = models.BooleanField(default=True)
 
 
