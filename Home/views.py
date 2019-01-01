@@ -21,3 +21,7 @@ def login_user(request):
             return HttpResponseRedirect('/dashboard/')
 
     return render(request, 'Home/login.html')
+
+
+def register(request):
+    return render(request,'Home/register.html')
