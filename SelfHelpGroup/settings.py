@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # User Define
-    'Collection.apps.AppConfig',
+    'Collection.apps.CollectionConfig',
     'Loan.apps.LoanConfig',
 ]
 
