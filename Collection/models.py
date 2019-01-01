@@ -3,6 +3,10 @@ from django.db import models
 
 # Create your models here.
 
+class Configuration(models.Model):
+    compound = models.BooleanField(default=False)
+
+
 class WorkingMonth(models.Model):
     month = models.CharField(max_length=50)
     is_active = models.BooleanField(default=True)
