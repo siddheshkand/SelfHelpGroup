@@ -7,4 +7,4 @@ class RegistrationForm(forms.ModelForm):
     class Meta:
         model = Member
         # fields = '__all__'
-        exclude = ['is_active']
+        exclude = ['is_active', 'user']
