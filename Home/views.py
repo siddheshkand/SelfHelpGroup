@@ -21,3 +21,13 @@ def login_user(request):
             return HttpResponseRedirect('/dashboard/')
 
     return render(request, 'Home/login.html')
+
+
+def show_dashboard(request):
+    class_active = "dashboard"
+    user = request.user
+    # If user exists in session (i.e. logged in)
+    if not user.is_anonymous:
+        return render(request, 'base_dashboard.html')
+    else:
+        return redirect('/login/')
