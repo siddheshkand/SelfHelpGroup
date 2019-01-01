@@ -7,13 +7,21 @@
         .mar-top {
             margin-top: 100px;
         }
+
+        @media only screen and (max-width: 480px) {
+            .mobile-col-6 {
+                max-width: 90%;
+                    flex-grow: 1;
+            }
+        }
+
     </style>
 {% endblock style %}
 {% block body %}
 
     <div class="container mar-top">
         <div class="row justify-content-center">
-            <div class="col-6">
+            <div class="col-6 mobile-col-6">
                 <form>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
