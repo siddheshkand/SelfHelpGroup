@@ -2,6 +2,8 @@ from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 
+from Home.forms import RegistrationForm
+
 
 def login_user(request):
     if request.method == "POST":
@@ -24,7 +26,8 @@ def login_user(request):
 
 
 def register(request):
-    return render(request,'Home/register.html')
+    # RegistrationForm()
+    return render(request, 'Home/register.html', {'form': RegistrationForm()})
 
 
 def show_dashboard(request):
