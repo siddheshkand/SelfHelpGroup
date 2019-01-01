@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+    Register
+{% endblock title %}
+{% block style %}
+    <style>
+        .mar-top {
+            margin-top: 100px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .mobile-col-6 {
+                max-width: 90%;
+                    flex-grow: 1;
+            }
+        }
+
+    </style>
+{% endblock style %}
+{% block body %}
+
+    <div class="container mar-top">
+        <div class="row justify-content-center">
+            <div class="col-6 mobile-col-6">
+                <form>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
