@@ -39,10 +39,11 @@ class UserCollection(models.Model):
 
 
 class UserPaymentDetails(models.Model):
-    user_collection = models.ForeignKey(UserCollection, on_delete=models.ForeignKey(UserCollection))
-    bank = models.ForeignKey(Bank, on_delete=models.ForeignKey(Bank))
+    user_collection = models.ForeignKey(UserCollection, on_delete=models.CASCADE)
+    bank = models.ForeignKey(Bank, on_delete=models.CASCADE)
     amount = models.PositiveIntegerField()
 
+
 class BankTransaction(models.Model):
-    bank = models.ForeignKey(Bank,on_delete=models.CASCADE)
+    bank = models.ForeignKey(Bank, on_delete=models.CASCADE)
     # credit =
