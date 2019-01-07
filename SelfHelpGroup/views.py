@@ -6,4 +6,8 @@ def index(request):
 
 
 def dashboard(request):
-    return render(request, 'base_dashboard.html')
+    return render(request, 'new_dashboard_base.html')
+
+
+def form(request):
+    return render(request, 'new_form_base.html')
