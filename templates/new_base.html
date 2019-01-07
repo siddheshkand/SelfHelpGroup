@@ -17,6 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <style>
+        {#        Scroll bar pretty#}
+        ::-webkit-scrollbar {
+            width: .2em;
+            height: .2em
+        }
+
+
         body {
             font-family: 'Roboto', sans-serif;
 
@@ -48,22 +55,36 @@
                 color: white;
             }
 
+            .custom-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+
         }
 
         @media screen and (min-width: 1024px) {
+        {#NON MOBILE#}
             .mdl-layout__header-row {
                 padding: 30px 30px;
+            }
+
+            .sidebar-title {
+                display: none;
             }
 
         }
 
         .custom-icon {
             margin: 5px 10px;
+
         }
-        .dashboard-icon-text{
+
+        .dashboard-icon-text {
             display: inline-block;
             margin-top: 5px;
         }
+
     </style>
     {% block style %}{% endblock style %}
 </head>
@@ -89,7 +110,7 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
         <div class="mdl-layout__drawer">
 
-            <span class="mdl-layout-title"></span>
+            <span class="mdl-layout-title"><span class="sidebar-title">SHG</span></span>
             <nav class="mdl-navigation custom-style">
                 <a class="mdl-navigation__link" href="">
                     <i class="material-icons">dashboard</i>
@@ -123,6 +144,10 @@
                 <a class="mdl-navigation__link" href="">
                     <i class="material-icons">backup</i>
                     <div class="dashboard-icon-text">Back up</div>
+                </a>
+                <a class="mdl-navigation__link" href="">
+                    <i class="material-icons">cached</i>
+                    <div class="dashboard-icon-text">Restore</div>
                 </a>
 
             </nav>
