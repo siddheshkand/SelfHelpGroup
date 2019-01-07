@@ -1,0 +1,94 @@
+{% extends 'base_dashboard.html' %}
+{% block title %}
+    Collection
+{% endblock title %}
+{% block style %}
+    {{ block.super }}
+    <style>
+        .mar-top {
+            margin-top: 100px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .mobile-col-6 {
+                max-width: 90%;
+                flex-grow: 1;
+            }
+        }
+
+        .input-sm-width {
+            width: 50px;
+        }
+    </style>
+{% endblock style %}
+{% block main %}
+
+    <div class="container mar-top">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Date </th>
+                <th scope="col">Acc. Head</th>
+                <th scope="col">Monthly</th>
+                <th scope="col">Monthly</th>
+                <th scope="col">Month</th>
+                <th scope="col">Year</th>
+                <th scope="col">Share</th>
+                <th scope="col">Loan Principal</th>
+                <th scope="col">Loan Interest</th>
+                <th scope="col">Fine Amount</th>
+                <th scope="col">Total</th>
+                <th scope="col">Paid</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td><input type="number" disabled value="500" class="input-sm-width"></td>
+                <td><input type="number" disabled value="500" class="input-sm-width"></td>
+                <td><input type="number" disabled value="500" class="input-sm-width"></td>
+                <td><input type="number" disabled value="500" class="input-sm-width"></td>
+                <td><input type="number" disabled value="2000" class="input-sm-width"></td>
+                <td><input type="number"   value="500" class="input-sm-width"></td>
+            </tr>
+            <tr>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td><input type="number" disabled value="500" class="input-sm-width"></td>
+                <td><input type="number" disabled value="500" class="input-sm-width"></td>
+                <td><input type="number" disabled value="500" class="input-sm-width"></td>
+                <td><input type="number" disabled value="500" class="input-sm-width"></td>
+                <td><input type="number" disabled value="2000" class="input-sm-width"></td>
+                <td><input type="number"   value="500" class="input-sm-width"></td>
+            </tr>
+            <tr>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td>sk</td>
+                <td><input type="number" disabled value="500" class="input-sm-width"></td>
+                <td><input type="number" disabled value="500" class="input-sm-width"></td>
+                <td><input type="number" disabled value="500" class="input-sm-width"></td>
+                <td><input type="number" disabled value="500" class="input-sm-width"></td>
+                <td><input type="number" disabled value="2000" class="input-sm-width"></td>
+                <td><input type="number"   value="500" class="input-sm-width"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock main %}

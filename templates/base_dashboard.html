@@ -13,51 +13,60 @@
                 font-size: 3.5rem;
             }
         }
+
+        .sidebar {
+            margin-top: 20px;
+            font-size: 1rem;
+        }
     </style>
 {% endblock style %}
 {% block body %}
-
-
     <div class="container-fluid">
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">
+                            <a class="nav-link" id='dashboard' href="{% url 'Home:show_dashboard' %}">
                                 <span data-feather="home"></span>
-                                Dashboard <span class="sr-only">(current)</span>
+                                Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" id='members' href="{% url 'Home:member' %}">
                                 <span data-feather="users"></span>
                                 Members
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="settings"></span>
-                                Configuration
+                            <a class="nav-link" id="collection" href="{% url 'Home:collection' %}">
+                                <span data-feather="check-square"></span>
+                                Collection
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" id="loan" href="#">
                                 <span data-feather="dollar-sign"></span>
                                 Loan
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" id="reports" href="#">
                                 <span data-feather="bar-chart-2"></span>
                                 Reports
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" id="add_extra_expenses" href="#">
                                 <span data-feather="plus-square"></span>
                                 Add Extra Expenses
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="configuration" href="#">
+                                <span data-feather="settings"></span>
+                                Configuration
                             </a>
                         </li>
                     </ul>
@@ -98,7 +107,7 @@
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" id="backup" href="#">
                                 <span data-feather="upload-cloud"></span>
                                 Backup
                             </a>
@@ -109,8 +118,8 @@
             </nav>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-
-
+                {% block main %}
+                {% endblock main %}
             </main>
         </div>
     </div>
@@ -120,6 +129,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <script>
         feather.replace();
+        // Code to make class active
+        {% if make_class_active %}
+            var element_to_make_active = document.getElementById('{{ make_class_active }}');
+            element_to_make_active.className += ' active';
+        {% endif %}
     </script>
     {#    <script src="{% static 'js/dashboard.js' %}"></script>#}
 {% endblock script %}

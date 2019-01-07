@@ -11,7 +11,7 @@
         @media only screen and (max-width: 480px) {
             .mobile-col-6 {
                 max-width: 90%;
-                    flex-grow: 1;
+                flex-grow: 1;
             }
         }
 
@@ -22,23 +22,17 @@
     <div class="container mar-top">
         <div class="row justify-content-center">
             <div class="col-6 mobile-col-6">
-                <form>
+                <form action="" method="post">
+                    {% csrf_token %}
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1"
-                               aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                            else.
-                        </small>
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username"
+                               aria-describedby="username" placeholder="Enter username" name="username">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"
-                               placeholder="Password">
-                    </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <label for="InputPassword1">Password</label>
+                        <input type="password" class="form-control" id="InputPassword1"
+                               placeholder="Password" name="password">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

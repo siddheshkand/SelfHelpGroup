@@ -19,6 +19,10 @@ from . import views
 
 app_name = 'Home'
 urlpatterns = [
+    path('dashboard/', views.show_dashboard, name='show_dashboard'),
+    path('member/', views.member, name='member'),
+    path('member/register', views.register, name='register'),
+    path('collection/', views.collection, name='collection'),
+
     path('login/', views.login_user, name='login'),
-    path('register/', views.register, name='register'),
 ]

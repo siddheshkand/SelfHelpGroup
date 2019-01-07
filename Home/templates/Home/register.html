@@ -1,11 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'base_dashboard.html' %}
 {% block title %}
     Register
 {% endblock title %}
 {% block style %}
+    {{ block.super }}
     <style>
         .mar-top {
-            margin-top: 100px;
+            margin-top: 50px;
         }
 
         @media only screen and (max-width: 480px) {
@@ -17,15 +18,27 @@
 
     </style>
 {% endblock style %}
-{% block body %}
+{% block main %}
 
     <div class="container mar-top">
-        <div class="row justify-content-center">
+        <div class="row ">
             <div class="col-6 mobile-col-6">
-                <form>
-                    {{ form.as_p }}
+                <h4>Register New Member to Shelf help Group</h4>
+                <form method="post" action="">
+                    {% for field in form %}
+                        <div class="form-group">
+
+                            <label for="">
+                                {{ field.label }}
+                            </label>
+                            {{ field }}
+                            {{ field.help_text }}
+
+                        </div>
+                    {% endfor %}
+                    <input type="submit" value="Register" class="btn btn-primary" style="float: right">
                 </form>
             </div>
         </div>
     </div>
-{% endblock body %}
+{% endblock main %}

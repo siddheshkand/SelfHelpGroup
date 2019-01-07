@@ -8,3 +8,8 @@ class RegistrationForm(forms.ModelForm):
         model = Member
         # fields = '__all__'
         exclude = ['is_active', 'user']
+
+    def __init__(self, *args, **kwargs):
+        super(RegistrationForm, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({'class': 'form-control', })

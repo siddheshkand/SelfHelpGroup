@@ -1,0 +1,26 @@
+{% extends 'base_dashboard.html' %}
+{% block title %}
+    Register
+{% endblock title %}
+{% block style %}
+    {{ block.super }}
+    <style>
+        .mar-top {
+            margin-top: 100px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .mobile-col-6 {
+                max-width: 90%;
+                flex-grow: 1;
+            }
+        }
+
+    </style>
+{% endblock style %}
+{% block main %}
+
+    <div class="container mar-top">
+        <a href="{% url  'Home:register' %}" class="btn btn-primary">Register</a>
+    </div>
+{% endblock main %}

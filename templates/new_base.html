@@ -1,0 +1,105 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,
+          user-scalable=no,
+          initial-scale=1.0,
+          maximum-scale=1.0,
+          minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}SHG{% endblock title %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    {#    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-light_blue.min.css"/>#}
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.pink-blue.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        .mdl-layout__header {
+            z-index: 6;
+        }
+
+        .custom-style {
+            margin-top: 50px;
+        }
+
+        @media screen and (max-width: 1024px) {
+        {#FOR MOBILE#}
+            .mdl-layout__header {
+                z-index: 3;
+            }
+
+            .navbar-navigation {
+                display: none;
+            }
+
+            .mdl-layout__header-row {
+                padding-left: 45px;
+            }
+
+            .mdl-layout__drawer-button {
+                color: white;
+            }
+
+        }
+
+        @media screen and (min-width: 1024px) {
+            .mdl-layout__header-row {
+                padding: 30px 30px;
+            }
+
+        }
+
+        .custom-icon {
+            margin: 5px 10px;
+        }
+    </style>
+    {% block style %}{% endblock style %}
+</head>
+<body>
+{% block body %}
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+        <header class="mdl-layout__header transparent">
+            <div class="mdl-layout__header-row">
+                {#                                <i class="material-icons custom-icon">cloud</i>#}
+                <img src="http://1.bp.blogspot.com/-OqDKgSvTx1w/VYsEuNy-YmI/AAAAAAAATto/kVtv_szgrZQ/s1600/MoneyWallet%2B2.0.png"
+                     alt="" width="50" height="50" class="custom-icon">
+                <span class="mdl-layout-title">Shelf Help Finance Tool</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation navbar-navigation">
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+        <div class="mdl-layout__drawer">
+
+            <span class="mdl-layout-title"></span>
+            <nav class="mdl-navigation custom-style">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content"><!-- Your content goes here --></div>
+        </main>
+    </div>
+{% endblock body %}
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+{% block script %}{% endblock script %}
+</body>
+</html>
