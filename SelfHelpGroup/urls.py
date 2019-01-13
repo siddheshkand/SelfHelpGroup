@@ -26,6 +26,7 @@ urlpatterns = [
     path('dash/', views.dashboard),
     path('form/', views.form),
     path('home/', include('Home.urls', namespace='Home')),
+    path('home/', include('Login.urls', namespace='Home')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
