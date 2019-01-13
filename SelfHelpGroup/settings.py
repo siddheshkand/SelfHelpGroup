@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'Collection.apps.CollectionConfig',
     'Loan.apps.LoanConfig',
     'Home',
+    'Login',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-
 
 }
 
