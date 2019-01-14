@@ -25,4 +25,5 @@ urlpatterns = [
     path('collection/', views.collection, name='collection'),
 
     path('login/', views.login_user, name='login'),
+    path('logout/', views.logout_user, name='logout'),
 ]

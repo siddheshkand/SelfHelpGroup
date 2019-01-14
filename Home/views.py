@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from . import forms
+from django.contrib.auth import logout
 
 
 def login_user(request):
@@ -24,6 +25,16 @@ def login_user(request):
     return render(request, 'Home/login.html')
 
 
+def logout_user(request):
+    user = request.user
+    # If user exists in session (i.e. logged in)
+    if not user.is_anonymous:
+        logout(request)
+        return redirect('/home/login/')
+    else:
+        return redirect('/home/login/')
+
+
 def register(request):
     make_class_active = "members"
     form = forms.RegistrationForm()
@@ -35,7 +46,7 @@ def show_dashboard(request):
     user = request.user
     # If user exists in session (i.e. logged in)
     if not user.is_anonymous:
-        return render(request, 'base_dashboard.html', {'make_class_active': make_class_active})
+        return render(request, 'new_dashboard_base.html', {'make_class_active': make_class_active})
     else:
         return redirect('/home/login/')
 

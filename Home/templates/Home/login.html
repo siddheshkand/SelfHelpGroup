@@ -1,42 +1,98 @@
-{% extends 'base.html' %}
-{% block title %}
-    Login
-{% endblock title %}
+{#{% extends 'base.html' %}#}
+{#{% block title %}#}
+{#    Login#}
+{#{% endblock title %}#}
+{#{% block style %}#}
+{#    <style>#}
+{#        .mar-top {#}
+{#            margin-top: 100px;#}
+{#        }#}
+{##}
+{#        @media only screen and (max-width: 480px) {#}
+{#            .mobile-col-6 {#}
+{#                max-width: 90%;#}
+{#                flex-grow: 1;#}
+{#            }#}
+{#        }#}
+{##}
+{#    </style>#}
+{#{% endblock style %}#}
+{#{% block body %}#}
+{##}
+{#    <div class="container mar-top">#}
+{#        <div class="row justify-content-center">#}
+{#            <div class="col-6 mobile-col-6">#}
+{#                <form action="" method="post">#}
+{#                    {% csrf_token %}#}
+{#                    <div class="form-group">#}
+{#                        <label for="username">Username</label>#}
+{#                        <input type="text" class="form-control" id="username"#}
+{#                               aria-describedby="username" placeholder="Enter username" name="username">#}
+{#                    </div>#}
+{#                    <div class="form-group">#}
+{#                        <label for="InputPassword1">Password</label>#}
+{#                        <input type="password" class="form-control" id="InputPassword1"#}
+{#                               placeholder="Password" name="password">#}
+{#                    </div>#}
+{#                    <button type="submit" class="btn btn-primary">Submit</button>#}
+{#                </form>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock body %}#}
+{##}
+{##}
+
+{% extends 'new_base.html' %}
 {% block style %}
     <style>
-        .mar-top {
-            margin-top: 100px;
+        .demo-card-square.mdl-card {
+            width: 320px;
+            height: 320px;
         }
 
-        @media only screen and (max-width: 480px) {
-            .mobile-col-6 {
-                max-width: 90%;
-                flex-grow: 1;
-            }
+        .demo-card-square > .mdl-card__title {
+            color: #fff;
+            object-fit: contain;
+            background: url('https://getmdl.io/assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
         }
 
+        {#To remove sidebar margin#}
+        .mdl-layout--fixed-drawer > .mdl-layout__content {
+            margin-left: 0;
+        }
     </style>
 {% endblock style %}
-{% block body %}
+{% block content %}
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col"></div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                    <h2 class="mdl-card__title-text">Login</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <form action="" method="post">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="sample3" name="username">
+                            <label class="mdl-textfield__label" for="sample3">Username</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="password" id="sample4" name="password">
+                            <label class="mdl-textfield__label" for="sample4">Password</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <input type="submit" value="Login"
+                                   class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        </div>
+                        {% csrf_token %}
+                    </form>
+                </div>
 
-    <div class="container mar-top">
-        <div class="row justify-content-center">
-            <div class="col-6 mobile-col-6">
-                <form action="" method="post">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username"
-                               aria-describedby="username" placeholder="Enter username" name="username">
-                    </div>
-                    <div class="form-group">
-                        <label for="InputPassword1">Password</label>
-                        <input type="password" class="form-control" id="InputPassword1"
-                               placeholder="Password" name="password">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
             </div>
         </div>
+        <div class="mdl-cell mdl-cell--4-col"></div>
+
     </div>
-{% endblock body %}
+{% endblock content %}
